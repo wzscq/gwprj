@@ -1,0 +1,7 @@
+{
+    "crv":{
+        "server":"http://127.0.0.1:8200",
+        "appID":"smartlock",
+        "token":"lockapi"
+    }
+}
