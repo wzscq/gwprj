@@ -48,5 +48,11 @@ func main() {
 
 	projectController.Bind(router)
 
+	/*data:=map[string]interface{}{
+		"id":"prj001",
+		"project_name":"项目1",
+	}*/
+	//project.CreateReport("closingreport",data,"./output")
+
 	router.Run("0.0.0.0:8300")
 }

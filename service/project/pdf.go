@@ -78,6 +78,10 @@ func CreatePdfText(pdf *gopdf.GoPdf,element *PageElement,data map[string]interfa
 		text=data[text[1:]].(string)
 	}*/
 
+	if element.MaxContentLength>0 && len(text)>element.MaxContentLength {
+		text=text[0:element.MaxContentLength]
+	}
+
 	//设置字体
 	if element.Font!=nil {
 		//log.Println("Font:",element.Font.Family,element.Font.Style,element.Font.Size)

@@ -33,6 +33,7 @@ type PageElement struct {
 	Width float64 `json:"width,omitempty"`
 	LineHeight float64  `json:"lineHeight,omitempty"`
 	WordSpace float64 `json:"wordSpace,omitempty"`
+	MaxContentLength int `json:"maxContentLength,omitempty"`
 }
 
 type TempletePage struct {

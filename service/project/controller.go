@@ -59,7 +59,7 @@ func (controller *ProjectController)downloadReport(c *gin.Context){
     	c.Header("Content-Transfer-Encoding", "binary")
 	
 		//生成报表
-		CreateReports("project",res,c.Writer)
+		CreateReports("closingreport",res,c.Writer)
 	}
 	
 	log.Println("ProjectController end downloadReport")
@@ -68,5 +68,5 @@ func (controller *ProjectController)downloadReport(c *gin.Context){
 //Bind bind the controller function to url
 func (controller *ProjectController) Bind(router *gin.Engine) {
 	log.Println("Bind ProjectController")
-	router.POST("/downloadReport", controller.downloadReport)
+	router.POST("project/downloadReport", controller.downloadReport)
 }
