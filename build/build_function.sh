@@ -19,6 +19,6 @@ if [ -e package/web/function ]; then
   rm -rf package/web/function
 fi
 
-mv ../report/build ./package/web/function
+mv ../function/build ./package/web/function
 
 echo functionpage package build over.
