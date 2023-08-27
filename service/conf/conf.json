@@ -3,5 +3,13 @@
         "server":"http://127.0.0.1:8200",
         "appID":"gwprj",
         "token":""
+    },
+    "redis":{
+        "server":"121.37.185.248:6479",
+        "oauthTokenExpired":"60s",
+        "oauthTokenDB":4
+    },
+    "oauth":{
+        "backUrl":"http://localhost:3000/mainframe/#/OAuthBack/gwprj?code=%s"
     }
 }

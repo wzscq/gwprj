@@ -55,8 +55,8 @@ func (controller *ProjectController)downloadReport(c *gin.Context){
 		fileName=url.QueryEscape(fileName)
 		
 		c.Header("Content-Type", "application/octet-stream")
-    	c.Header("Content-Disposition", "attachment; filename="+fileName)
-    	c.Header("Content-Transfer-Encoding", "binary")
+    c.Header("Content-Disposition", "attachment; filename="+fileName)
+    c.Header("Content-Transfer-Encoding", "binary")
 	
 		//生成报表
 		CreateReports("closingreport",res,c.Writer)

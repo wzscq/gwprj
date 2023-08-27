@@ -8,15 +8,28 @@ import (
 
 type crvConf struct {
 	Server string `json:"server"`
-    User string `json:"user"`
-    Password string `json:"password"`
-    AppID string `json:"appID"`
+  User string `json:"user"`
+  Password string `json:"password"`
+  AppID string `json:"appID"`
 	Token string `json:"token"`
+}
+
+type redisConf struct {
+	Server string `json:"server"`
+	OauthTokenExpired string `json:"oauthTokenExpired"`
+	OauthTokenDB int `json:"oauthTokenDB"`
+	Password string `json:"password"`
+}
+
+type oauthConf struct {
+	BackUrl string `json:"backUrl"`
 }
 
 
 type Config struct {
 	CRV crvConf `json:"crv"`
+	Redis redisConf `json:"redis"`
+	Oauth oauthConf `json:"oauth"`
 }
 
 var gConfig Config

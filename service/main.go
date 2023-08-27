@@ -6,6 +6,7 @@ import (
 	"gwprj/project"
 	"gwprj/common"
 	"gwprj/crv"
+	"gwprj/oauth"
 	"time"
 	"log"
 	"os"
@@ -47,6 +48,16 @@ func main() {
 	}
 
 	projectController.Bind(router)
+
+	//oauth
+	oauthTokenExpired,_:=time.ParseDuration(conf.Redis.OauthTokenExpired)
+	oauthCache:=&oauth.OAuthCache{}
+	oauthCache.Init(conf.Redis.Server,conf.Redis.OauthTokenDB,oauthTokenExpired,conf.Redis.Password)
+	oauthController:=&oauth.OAuthController{
+		OAuthCache:oauthCache,
+		BackUrl:conf.Oauth.BackUrl,
+	}
+	oauthController.Bind(router)
 
 	/*data:=map[string]interface{}{
 		"id":"prj001",
