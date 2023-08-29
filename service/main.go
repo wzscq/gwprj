@@ -5,6 +5,7 @@ import (
 	"github.com/gin-contrib/cors"
 	"gwprj/project"
 	"gwprj/common"
+	"gwprj/user"
 	"gwprj/crv"
 	"gwprj/oauth"
 	"time"
@@ -49,6 +50,26 @@ func main() {
 
 	projectController.Bind(router)
 
+	//是否更新用户信息
+	var UserBusi *user.UserBusi
+	if conf.Service.UpdateUser == true {
+		//创建数据库连接
+		userRepo:=&user.DefatultUserRepository{}
+    userRepo.Connect(
+        conf.Mysql.Server,
+        conf.Mysql.User,
+        conf.Mysql.Password,
+        conf.Mysql.DBName,
+        conf.Mysql.ConnMaxLifetime,
+        conf.Mysql.MaxOpenConns,
+        conf.Mysql.MaxIdleConns)
+		//创建用户业务对象
+		UserBusi=&user.UserBusi{
+			UserRepository:userRepo,
+			CRVClient:crvClinet,
+		}
+	}
+
 	//oauth
 	oauthTokenExpired,_:=time.ParseDuration(conf.Redis.OauthTokenExpired)
 	oauthCache:=&oauth.OAuthCache{}
@@ -56,6 +77,7 @@ func main() {
 	oauthController:=&oauth.OAuthController{
 		OAuthCache:oauthCache,
 		BackUrl:conf.Oauth.BackUrl,
+		UserBusi:UserBusi,
 	}
 	oauthController.Bind(router)
 
@@ -65,5 +87,5 @@ func main() {
 	}*/
 	//project.CreateReport("closingreport",data,"./output")
 
-	router.Run("0.0.0.0:8300")
+	router.Run(conf.Service.Port)
 }

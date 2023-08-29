@@ -21,15 +21,31 @@ type redisConf struct {
 	Password string `json:"password"`
 }
 
+type mysqlConf struct {
+	Server string `json:"server"`
+	Password string `json:"password"`
+	User string `json:"user"`
+	DBName string `json:"dbName"`
+	ConnMaxLifetime int `json:"connMaxLifetime"` 
+  MaxOpenConns int `json:"maxOpenConns"`
+  MaxIdleConns int `json:"maxIdleConns"`
+}
+
 type oauthConf struct {
 	BackUrl string `json:"backUrl"`
 }
 
+type serviceConf struct {
+	Port string `json:"port"`
+	UpdateUser bool `json:"updateUser"`
+}
 
 type Config struct {
 	CRV crvConf `json:"crv"`
 	Redis redisConf `json:"redis"`
 	Oauth oauthConf `json:"oauth"`
+	Mysql  mysqlConf  `json:"mysql"`
+	Service serviceConf `json:"service"`
 }
 
 var gConfig Config

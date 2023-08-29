@@ -2,7 +2,7 @@
     "crv":{
         "server":"http://127.0.0.1:8200",
         "appID":"gwprj",
-        "token":""
+        "token":"gwprjservice"
     },
     "redis":{
         "server":"121.37.185.248:6479",
@@ -11,5 +11,18 @@
     },
     "oauth":{
         "backUrl":"http://localhost:3000/mainframe/#/OAuthBack/gwprj?code=%s"
+    },
+    "mysql":{
+        "server":"121.37.185.248:3306",
+        "password":"123456",
+        "user":"root",
+        "dbName":"ensoft",
+        "connMaxLifetime":60,
+        "maxOpenConns":10,
+        "maxIdleConns":10
+    },
+    "service":{
+        "port":"0.0.0.0:8300",
+        "updateUser":true
     }
 }

@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"net/url"
 	"fmt"
+	"gwprj/user"
 )
 
 type getLoginPageReq struct {
@@ -46,6 +47,7 @@ type OauthToken struct {
 type OAuthController struct {
 	OAuthCache *OAuthCache
 	BackUrl string
+	UserBusi *user.UserBusi
 }
 
 const (
@@ -57,6 +59,12 @@ const (
 func (controller *OAuthController)login(c *gin.Context) {
 	log.Println("start OAuthController login")
 	userID:=c.Query("userId")
+
+	//更新用户信息
+	if controller.UserBusi!=nil {
+		controller.UserBusi.UpdateUserRoles(userID)
+	}
+	
 	//redirectUri:=c.Query("redirectUri")
 	token:=getOAuthToken()
   log.Println("userID:",userID,"token:",token)
