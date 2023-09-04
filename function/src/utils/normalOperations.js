@@ -30,11 +30,11 @@ export function createGetMenuMessage(frameParams){
     };
 }
 
-export function createOpenMenuMessage(frameParams,menu){
+export function createOpenMenuMessage(frameParams,operation){
     return {
         type:FRAME_MESSAGE_TYPE.DO_OPERATION,
         data:{
-            operationItem:menu.operation
+            operationItem:operation
         }
     };
 }

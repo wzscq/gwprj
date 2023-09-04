@@ -28,8 +28,8 @@ export default function Function(){
     },
   [origin,item]);
 
-  const openMenu=useCallback((menu)=>{
-    sendMessageToParent(createOpenMenuMessage(frameParams,menu));
+  const openMenu=useCallback((operation)=>{
+    sendMessageToParent(createOpenMenuMessage(frameParams,operation));
   },[frameParams,sendMessageToParent]);
 
   //加载配置
@@ -43,6 +43,29 @@ export default function Function(){
     }
   },[loaded,frameParams,sendMessageToParent]);
 
+  useEffect(()=>{
+    if(loaded===true){
+      if(menus.length===1){
+        if(menus[0].children.length===1){
+          const operation=menus[0].children[0].operation;
+    
+          const closeFunctionOpertion={
+            type:"close",
+            params:{
+              location:"tab",
+              key:"/gwprj/function"
+            },
+            input:{},
+            description:"关闭对话框",
+            successOperation:{...operation,params:{...operation.params,closable:false}}
+          };
+          openMenu(closeFunctionOpertion);
+        }
+      }
+    }
+  },[menus,loaded,openMenu]);
+
+
   if(loaded===false){
     return (<PageLoading/>);
   }
@@ -54,7 +77,7 @@ export default function Function(){
         <Card
           size='small'
           title={child.name}
-          extra={<a onClick={()=>openMenu(child)} href="#">打开</a>}
+          extra={<a onClick={()=>openMenu(child.operation)} href="#">打开</a>}
           style={{width: 200,}}
         >
           <div>{child.description}</div>
