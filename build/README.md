@@ -9,3 +9,6 @@ docker run --name gwprjservice -d -p8302:80 -v /root/gwprjservice/font:/services
 3、配置文件修改gw_project/forms/pmEdit、gw_project/forms/detail、  gw_project/forms/approvalDetail 
 4、修改最外层operatios中/gwprj/function的权限配置，允许所有人访问{roles:"*"}
 5、上传文件的方式改进
+
+2023-10-15
+1、修改了项目结项报告的模板文件

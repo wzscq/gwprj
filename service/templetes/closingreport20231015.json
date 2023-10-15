@@ -1,0 +1,78 @@
+{
+  "pageSize":{"w": 595.28, "h": 841.89},
+  "pages":[
+    {
+      "elements":[
+        {"type":"text","rect":[240,20,520,100],"color":{"r":0,"g":0,"b":0},"content":"专班验收报告","font":{"size":16,"style":"","family":"msyh"},"lineHeight":28,"wordSpace":1},
+        {"type":"line","rect":[30,50,570,50],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[30,80,570,80],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[30,110,570,110],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[30,140,570,140],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[30,430,570,430],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[30,500,570,500],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[30,570,570,570],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[30,600,570,600],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[30,630,570,630],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[30,660,570,660],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[30,690,570,690],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[30,720,570,720],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[30,750,570,750],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[30,780,570,780],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[30,810,570,810],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[30,50,30,810],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[570,50,570,810],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[140,50,140,600],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[140,630,140,810],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[280,50,280,140],"color":{"r":0,"g":0,"b":0},"width":0.2},
+        {"type":"line","rect":[340,50,340,140],"color":{"r":0,"g":0,"b":0},"width":0.2},
+
+        {"type":"text","rect":[60,59,520,80],"color":{"r":0,"g":0,"b":0},"content":"项目编码","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[145,60,520,80],"color":{"r":110,"g":110,"b":110},"content":"%{id}","font":{"size":10,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[285,59,520,80],"color":{"r":0,"g":0,"b":0},"content":"项目名称","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[345,60,570,70],"color":{"r":110,"g":110,"b":110},"content":"%{project_name}","font":{"size":10,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":0},
+
+        {"type":"text","rect":[60,89,520,110],"color":{"r":0,"g":0,"b":0},"content":"批准文号","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[285,89,520,110],"color":{"r":0,"g":0,"b":0},"content":"验收日期","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[345,90,570,100],"color":{"r":110,"g":110,"b":110},"content":"%{approver5.update_time}","maxContentLength":10,"font":{"size":10,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":0},
+
+        {"type":"text","rect":[60,119,520,140],"color":{"r":0,"g":0,"b":0},"content":"开工日期","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[145,120,300,130],"color":{"r":110,"g":110,"b":110},"content":"%{start_date}","maxContentLength":10,"font":{"size":10,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":0},
+        {"type":"text","rect":[285,119,520,140],"color":{"r":0,"g":0,"b":0},"content":"竣工日期","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[345,120,570,130],"color":{"r":110,"g":110,"b":110},"content":"%{end_date}","maxContentLength":10,"font":{"size":10,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":0},
+
+        {"type":"text","rect":[60,269,520,320],"color":{"r":0,"g":0,"b":0},"content":"项目概况","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[145,145,565,425],"color":{"r":110,"g":110,"b":110},"content":"%{statement}","font":{"size":10,"style":"","family":"msyh"},"lineHeight":11,"wordSpace":1},
+
+        {"type":"text","rect":[42,448,520,480],"color":{"r":0,"g":0,"b":0},"content":"竣工验收发现的","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[42,463,520,480],"color":{"r":0,"g":0,"b":0},"content":"问题及处理情况","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[345,460,515,475],"color":{"r":110,"g":110,"b":110},"content":"无","font":{"size":10,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        
+        {"type":"text","rect":[48,520,520,570],"color":{"r":0,"g":0,"b":0},"content":"项目遗留问题","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[54,535,520,540],"color":{"r":0,"g":0,"b":0},"content":"及处理意见","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[345,530,515,570],"color":{"r":110,"g":110,"b":110},"content":"无","font":{"size":10,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+
+        {"type":"text","rect":[34,579,520,600],"color":{"r":0,"g":0,"b":0},"content":"是否具备投产条件","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[345,580,515,595],"color":{"r":110,"g":110,"b":110},"content":"是","font":{"size":10,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+
+        {"type":"text","rect":[262,609,520,630],"color":{"r":0,"g":0,"b":0},"content":"验收人员签字","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[48,639,520,660],"color":{"r":0,"g":0,"b":0},"content":"项目管理部门","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[145,640,520,660],"color":{"r":110,"g":110,"b":110},"content":"%{pm} %{approver0.create_time}","font":{"size":10,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+
+        {"type":"text","rect":[46,669,520,690],"color":{"r":0,"g":0,"b":0},"content":"专班团队成员1","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[145,670,520,690],"color":{"r":110,"g":110,"b":110},"content":"同意 (%{approver1.approver.user_name_zh} %{approver1.update_time}) ","font":{"size":10,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+
+        {"type":"text","rect":[46,699,520,720],"color":{"r":0,"g":0,"b":0},"content":"专班团队成员2","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[145,700,520,720],"color":{"r":110,"g":110,"b":110},"content":"同意 (%{approver2.approver.user_name_zh} %{approver2.update_time}) ","font":{"size":10,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+
+        {"type":"text","rect":[46,729,520,750],"color":{"r":0,"g":0,"b":0},"content":"专班团队成员3","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[145,730,520,750],"color":{"r":110,"g":110,"b":110},"content":"同意 (%{approver3.approver.user_name_zh} %{approver3.update_time}) ","font":{"size":10,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+
+        {"type":"text","rect":[46,759,520,780],"color":{"r":0,"g":0,"b":0},"content":"专班团队成员4","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[200,760,520,780],"color":{"r":110,"g":110,"b":110},"content":"同意 (%{approver4.approver.user_name_zh} %{approver4.update_time}) ","font":{"size":10,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+
+        {"type":"text","rect":[46,789,520,810],"color":{"r":0,"g":0,"b":0},"content":"专班团队成员5","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[145,790,520,810],"color":{"r":110,"g":110,"b":110},"content":"同意 (%{approver5.approver.user_name_zh} %{approver5.update_time}) ","font":{"size":10,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1}
+      ]
+    }
+  ]
+}
