@@ -13,3 +13,7 @@ docker run --name gwprjservice -d -p8302:80 -v /root/gwprjservice/font:/services
    修改crvframe配置文件conf.json，增加upload相应配置项
    修改gw_project/forms/pmEdit、gw_project/forms/detail中对应文件上传控件
 6、导出报告格式完善，部分字段值需要更长
+
+
+2023-10-15
+1、修改了项目结项报告的模板文件

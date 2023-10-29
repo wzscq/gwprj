@@ -13,7 +13,7 @@
         "backUrl":"http://localhost:3000/mainframe/#/OAuthBack/gwprj?code=%s"
     },
     "mysql":{
-        "server":"121.37.185.248:3306",
+        "server":"121.37.185.248:4306",
         "password":"123456",
         "user":"root",
         "dbName":"ensoft",
@@ -23,6 +23,6 @@
     },
     "service":{
         "port":"0.0.0.0:8300",
-        "updateUser":true
+        "updateUser":false
     }
 }
