@@ -67,7 +67,7 @@ func (controller *OAuthController)login(c *gin.Context) {
 	
 	//redirectUri:=c.Query("redirectUri")
 	token:=getOAuthToken()
-  log.Println("userID:",userID,"token:",token)
+  	log.Println("userID:",userID,"token:",token)
 	//将token存入缓存
 	controller.OAuthCache.SetCache(userID,token)
 

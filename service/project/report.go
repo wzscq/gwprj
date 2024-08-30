@@ -6,25 +6,37 @@ import (
 	"log"
 	"archive/zip"
 	"io"
+	"time"
+	"strconv"
 )
 
-var projectFields=[]map[string]interface{}{
+var ProjectFields=[]map[string]interface{}{
 	{"field":"id"},
 	{"field":"project_name"},
-	{"field":"start_date"},
-	{"field":"end_date"},
 	{"field":"statement"},
-	{"field":"pm"},
+	{"field":"plan_number"},
+	{"field":"branch"},
+	{"field":"department"},
 	{
-		"field":"approver0",
+		"field":"create_user",
+		"fieldType":"many2one",
+		"relatedModelID":"core_user",
+		"fields":[]map[string]interface{}{
+			{"field":"id"},
+			{"field":"user_name_zh"},
+		},
+	},
+	{
+		"field":"dh",
 		"fieldType":"one2many",
-		"relatedModelID":"gw_project_approver",
+		"relatedModelID":"gw_audit_rec",
 		"relatedField":"project_id",
 		"sorter":[]map[string]interface{}{
 			{"field":"update_time","order":"desc"},
 		},
 		"filter":map[string]interface{}{
-			"role":"事务所审批",
+			"role":"业务部门负责人",
+			"audit_result":"1",
 		},
 		"pagination":map[string]interface{}{
 			"current":1,
@@ -42,21 +54,23 @@ var projectFields=[]map[string]interface{}{
 				},
 			},
 			{"field":"role"},
+			{"field":"comment"},
 			{"field":"project_id"},
 			{"field":"update_time"},
 			{"field":"create_time"},
 		},
 	},
 	{
-		"field":"approver1",
+		"field":"ssds",
 		"fieldType":"one2many",
-		"relatedModelID":"gw_project_approver",
+		"relatedModelID":"gw_audit_rec",
 		"relatedField":"project_id",
 		"sorter":[]map[string]interface{}{
-			{"field":"update_time","order":"asc"},
+			{"field":"update_time","order":"desc"},
 		},
 		"filter":map[string]interface{}{
-			"role":"财务审批",
+			"role":"安监专责",
+			"audit_result":"1",
 		},
 		"pagination":map[string]interface{}{
 			"current":1,
@@ -74,24 +88,26 @@ var projectFields=[]map[string]interface{}{
 				},
 			},
 			{"field":"role"},
+			{"field":"comment"},
 			{"field":"project_id"},
 			{"field":"update_time"},
 			{"field":"create_time"},
 		},
 	},
 	{
-		"field":"approver2",
+		"field":"ssdh",
 		"fieldType":"one2many",
-		"relatedModelID":"gw_project_approver",
+		"relatedModelID":"gw_audit_rec",
 		"relatedField":"project_id",
 		"sorter":[]map[string]interface{}{
-			{"field":"update_time","order":"asc"},
+			{"field":"update_time","order":"desc"},
 		},
 		"filter":map[string]interface{}{
-			"role":"财务审批",
+			"role":"安监负责人",
+			"audit_result":"1",
 		},
 		"pagination":map[string]interface{}{
-			"current":2,
+			"current":1,
 			"pageSize":1,
 		},
 		"fields":[]map[string]interface{}{
@@ -106,24 +122,26 @@ var projectFields=[]map[string]interface{}{
 				},
 			},
 			{"field":"role"},
+			{"field":"comment"},
 			{"field":"project_id"},
 			{"field":"update_time"},
 			{"field":"create_time"},
 		},
 	},
 	{
-		"field":"approver3",
+		"field":"bl",
 		"fieldType":"one2many",
-		"relatedModelID":"gw_project_approver",
+		"relatedModelID":"gw_audit_rec",
 		"relatedField":"project_id",
 		"sorter":[]map[string]interface{}{
-			{"field":"update_time","order":"asc"},
+			{"field":"update_time","order":"desc"},
 		},
 		"filter":map[string]interface{}{
-			"role":"财务审批",
+			"role":"业务分管领导",
+			"audit_result":"1",
 		},
 		"pagination":map[string]interface{}{
-			"current":3,
+			"current":1,
 			"pageSize":1,
 		},
 		"fields":[]map[string]interface{}{
@@ -138,24 +156,26 @@ var projectFields=[]map[string]interface{}{
 				},
 			},
 			{"field":"role"},
+			{"field":"comment"},
 			{"field":"project_id"},
 			{"field":"update_time"},
 			{"field":"create_time"},
 		},
 	},
 	{
-		"field":"approver4",
+		"field":"ssbl",
 		"fieldType":"one2many",
-		"relatedModelID":"gw_project_approver",
+		"relatedModelID":"gw_audit_rec",
 		"relatedField":"project_id",
 		"sorter":[]map[string]interface{}{
-			{"field":"update_time","order":"asc"},
+			{"field":"update_time","order":"desc"},
 		},
 		"filter":map[string]interface{}{
-			"role":"财务审批",
+			"role":"安监分管领导",
+			"audit_result":"1",
 		},
 		"pagination":map[string]interface{}{
-			"current":4,
+			"current":1,
 			"pageSize":1,
 		},
 		"fields":[]map[string]interface{}{
@@ -170,38 +190,7 @@ var projectFields=[]map[string]interface{}{
 				},
 			},
 			{"field":"role"},
-			{"field":"project_id"},
-			{"field":"update_time"},
-			{"field":"create_time"},
-		},
-	},
-	{
-		"field":"approver5",
-		"fieldType":"one2many",
-		"relatedModelID":"gw_project_approver",
-		"relatedField":"project_id",
-		"sorter":[]map[string]interface{}{
-			{"field":"update_time","order":"asc"},
-		},
-		"filter":map[string]interface{}{
-			"role":"财务审批",
-		},
-		"pagination":map[string]interface{}{
-			"current":5,
-			"pageSize":1,
-		},
-		"fields":[]map[string]interface{}{
-			{"field":"id"},
-			{
-				"field":"approver",
-				"fieldType":"many2one",
-				"relatedModelID":"core_user",
-				"fields":[]map[string]interface{}{
-					{"field":"id"},
-					{"field":"user_name_zh"},
-				},
-			},
-			{"field":"role"},
+			{"field":"comment"},
 			{"field":"project_id"},
 			{"field":"update_time"},
 			{"field":"create_time"},
@@ -221,9 +210,11 @@ func GetProjectData(ids *[]string,crvClinet *crv.CRVClient,token string)([]inter
 		commonRep:=crv.CommonReq{
 			ModelID:"gw_project",
 			Filter:&map[string]interface{}{
-				"id":id,
+				"id":map[string]interface{}{
+					"Op.eq":id,
+				},
 			},
-			Fields:&projectFields,
+			Fields:&ProjectFields,
 		}
 
 		req,commonErr:=crvClinet.Query(&commonRep,token)
@@ -244,13 +235,57 @@ func GetProjectData(ids *[]string,crvClinet *crv.CRVClient,token string)([]inter
 }
 
 func GetReportFileName(project map[string]interface{})(string){
-	projectID:=project["id"].(string)
+	projectID:=project["project_id"].(string)
 	projectName:=project["project_name"].(string)
 	return projectID+"_"+projectName
 }
 
+func GetReportID(overTime,reportID string)(string){
+	//字符串转换为date对象
+	date,_:=time.Parse("2006-01-02 15:04:05",overTime)
+	//日期格式化为字符串
+	overTime=date.Format("20060102150405")
+	//reportID转换为整数
+	id,_:=strconv.Atoi(reportID)
+	//取1000的余数
+	id=id%1000
+	//转为字符串
+	reportID=strconv.Itoa(id)
+	//不足3位的补0
+	for len(reportID)<3 {
+		reportID="0"+reportID
+	}
+	return overTime+reportID
+}
+
 func GetReportData(data map[string]interface{})(map[string]interface{}){
-	return data
+	//最后一个审批时间作为报告时间
+	overTime:=getfilterDataString("ssbl.create_time",data)
+	log.Println("GetReportData overTime:"+overTime)
+	//生成报告编号，用最后一个审批时间+审批记录ID
+	reportID:=getfilterDataString("ssbl.id",data)
+	reportID=GetReportID(overTime,reportID)
+
+	
+	//转换日期格式
+	newData:=map[string]interface{}{
+		"project_id":data["id"],
+		"project_name":data["project_name"],
+		"statement":data["statement"],
+		"plan_number":data["plan_number"],
+		"branch":data["branch"],
+		"department":data["department"],
+		"over_time":overTime[0:10],
+		"report_id":reportID,
+		"create_user":data["create_user"],
+		"dh":data["dh"],
+		"ssds":data["ssds"],
+		"ssdh":data["ssdh"],
+		"bl":data["bl"],
+		"ssbl":data["ssbl"],
+	}
+
+	return newData
 }
 
 func CreateReports(tmpName string,list []interface{},w io.Writer)(int){
