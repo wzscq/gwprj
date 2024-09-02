@@ -62,7 +62,8 @@ func (controller *OAuthController)login(c *gin.Context) {
 
 	//更新用户信息
 	if controller.UserBusi!=nil {
-		controller.UserBusi.UpdateUserRoles(userID)
+		//暂时不更新用户信息
+		//controller.UserBusi.UpdateUserRoles(userID)
 	}
 	
 	//redirectUri:=c.Query("redirectUri")
@@ -112,13 +113,14 @@ func (controller *OAuthController)userInfo(c *gin.Context){
 		return 
     }	
 	log.Println(req)
-	if len(req.Authorization)<7 {
+	/*if len(req.Authorization)<7 {
 		log.Println("OAuthController userInfo request token is too short")
 		c.IndentedJSON(http.StatusBadRequest, nil)
 		log.Println("end OAuthController userInfo with error")
 		return 
 	}
-	token:=req.Authorization[6:]
+	token:=req.Authorization[6:]*/
+	token:=req.Authorization
 	log.Println("token is:",token)
 	
 	userID,err:=controller.OAuthCache.GetUserID(token)
