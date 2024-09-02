@@ -99,7 +99,8 @@ func (controller *ProjectController)downloadReportNew(c *gin.Context){
 	if res!=nil && len(res)>0 {
 		var fileName string
 		if len(res)==1 {
-			fileName=GetReportFileName(res[0].(map[string]interface{}))+".pdf"
+			mapData:=GetReportData(res[0].(map[string]interface{}))
+			fileName=GetReportFileName(mapData)+".pdf"
 		} else {
 			fileName=GetBatchID()+".zip"
 		}
