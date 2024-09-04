@@ -265,7 +265,10 @@ func GetReportData(data map[string]interface{})(map[string]interface{}){
 	//生成报告编号，用最后一个审批时间+审批记录ID
 	reportID:=getfilterDataString("ssbl.id",data)
 	reportID=GetReportID(overTime,reportID)
-
+	branch:=getfilterDataString("branch",data)
+	if branch=="眉山公司本部" {
+		branch=""
+	}
 	
 	//转换日期格式
 	newData:=map[string]interface{}{
@@ -273,7 +276,7 @@ func GetReportData(data map[string]interface{})(map[string]interface{}){
 		"project_name":data["project_name"],
 		"statement":data["statement"],
 		"plan_number":data["plan_number"],
-		"branch":data["branch"],
+		"branch":branch,
 		"department":data["department"],
 		"over_time":overTime[0:10],
 		"report_id":reportID,

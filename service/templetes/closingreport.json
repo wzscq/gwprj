@@ -4,7 +4,7 @@
     {
       "elements":[
         {"type":"text","rect":[40,50,560,70],"color":{"r":90,"g":90,"b":90},"content":"附件2：","font":{"size":16,"style":"","family":"msyh"},"lineHeight":16,"wordSpace":1},
-        {"type":"text","rect":[135,80,560,100],"color":{"r":90,"g":90,"b":90},"content":"国网眉山供电公司作业计划项目入账审批表","font":{"size":16,"style":"","family":"msyh"},"lineHeight":16,"wordSpace":1},
+        {"type":"text","rect":[125,80,560,100],"color":{"r":90,"g":90,"b":90},"content":"国网眉山供电公司%{branch}作业计划项目入账审批表","font":{"size":16,"style":"","family":"msyh"},"lineHeight":16,"wordSpace":1},
         {"type":"text","rect":[40,110,560,120],"color":{"r":110,"g":110,"b":110},"content":"入账审批编号：%{report_id}","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
         {"type":"text","rect":[420,110,560,120],"color":{"r":110,"g":110,"b":110},"content":"制单日期1：%{over_time}","font":{"size":12,"style":"","family":"msyh"},"lineHeight":12,"wordSpace":0},
 
@@ -34,7 +34,7 @@
 
         {"type":"text","rect":[201,138,560,800],"color":{"r":90,"g":90,"b":90},"content":"项目编码","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
         {"type":"text","rect":[201,168,560,800],"color":{"r":90,"g":90,"b":90},"content":"项目名称","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
-        {"type":"text","rect":[201,198,560,800],"color":{"r":90,"g":90,"b":90},"content":"项目内容","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[201,198,560,800],"color":{"r":90,"g":90,"b":90},"content":"项目内容","font":{"size":12,"style":"","family":"msyh"},"lineHeight":12,"wordSpace":1},
         {"type":"text","rect":[189,228,560,800],"color":{"r":90,"g":90,"b":90},"content":"作业计划编码","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
         {"type":"text","rect":[189,258,560,800],"color":{"r":90,"g":90,"b":90},"content":"制单人及部门","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
         {"type":"text","rect":[171,288,560,800],"color":{"r":90,"g":90,"b":90},"content":"业务部门负责人意见","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
@@ -45,14 +45,14 @@
 
         {"type":"text","rect":[310,138,560,800],"color":{"r":90,"g":90,"b":90},"content":"%{project_id}","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
         {"type":"text","rect":[310,168,560,800],"color":{"r":90,"g":90,"b":90},"content":"%{project_name}","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
-        {"type":"text","rect":[310,198,560,800],"color":{"r":90,"g":90,"b":90},"content":"%{statement}","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[310,193,560,800],"color":{"r":90,"g":90,"b":90},"content":"%{statement}","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
         {"type":"text","rect":[310,228,560,800],"color":{"r":90,"g":90,"b":90},"content":"%{plan_number}","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
         {"type":"text","rect":[310,258,560,800],"color":{"r":90,"g":90,"b":90},"content":"%{department} %{create_user.user_name_zh}","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
-        {"type":"text","rect":[310,288,560,800],"color":{"r":90,"g":90,"b":90},"content":"%{dh.comment}","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
-        {"type":"text","rect":[310,318,560,800],"color":{"r":90,"g":90,"b":90},"content":"%{ssds.comment}","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
-        {"type":"text","rect":[310,348,560,800],"color":{"r":90,"g":90,"b":90},"content":"%{ssdh.comment}","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
-        {"type":"text","rect":[310,378,560,800],"color":{"r":90,"g":90,"b":90},"content":"%{bl.comment}","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
-        {"type":"text","rect":[310,408,560,800],"color":{"r":90,"g":90,"b":90},"content":"%{ssbl.comment}","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1}
+        {"type":"text","rect":[310,288,560,800],"color":{"r":90,"g":90,"b":90},"content":"%{dh.comment} %{dh.create_time}","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[310,318,560,800],"color":{"r":90,"g":90,"b":90},"content":"%{ssds.comment} %{ssds.create_time}","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[310,348,560,800],"color":{"r":90,"g":90,"b":90},"content":"%{ssdh.comment} %{ssdh.create_time}","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[310,378,560,800],"color":{"r":90,"g":90,"b":90},"content":"%{bl.comment} %{bl.create_time}","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1},
+        {"type":"text","rect":[310,408,560,800],"color":{"r":90,"g":90,"b":90},"content":"%{ssbl.comment} %{ssbl.create_time}","font":{"size":12,"style":"","family":"msyh"},"lineHeight":14,"wordSpace":1}
       ]
     }
   ]
